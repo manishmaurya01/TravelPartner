@@ -3,6 +3,7 @@ import { db } from '../../../firebase/firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
 import './FlightPage.css';
 import SearchSection from '../search/Search-Section';
+import { Link } from 'react-router-dom';
 
 function FlightPage() {
   const [flights, setFlights] = useState([]);
@@ -184,14 +185,14 @@ function FlightPage() {
 
       {/* Book Now Button */}
       <div className="book-now-container">
-        <a
-          href={`/book-flight/${selectedFlight.id}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="book-now-btn"
-        >
-          Book Now
-        </a>
+      <Link
+    
+  to={`/book-flight/${selectedFlight.id}`}
+  className="book-now-btn"
+>
+  Book Now
+</Link>
+
       </div>
     </div>
   </div>
