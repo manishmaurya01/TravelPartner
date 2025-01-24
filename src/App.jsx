@@ -9,7 +9,7 @@ import FlightPage from  './components/comon/FlightPage/FlightPage'
 import BusPage from  './components/comon/BusPage/BusPage'
 import TrainPage from  './components/comon/TrainPage/TrainPage'
 import AdminPage from './components/admin/AdminPage';
-import Profile from './components/profile/profile';
+import Profile from './components/profile/Profile';
 import ProfileEdit from './components/profile/edit-profile';
 import FlightBooking from './components/comon/FlightBooking/FlightBooking';
 
