@@ -1,0 +1,95 @@
+.admin-page {
+    padding: 20px;
+  }
+  
+  .flight-form input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+  }
+  
+  .flight-form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .flight-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .flight-list {
+    margin-top: 20px;
+  }
+  
+  .flight-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+  
+  .flight-item p {
+    font-size: 16px;
+  }
+  
+  .add-flight-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .add-flight-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .add-flight-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  button {
+    grid-column: span 2;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  

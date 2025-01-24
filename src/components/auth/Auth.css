@@ -1,0 +1,283 @@
+:root {
+  --primary-bg: #1e1e2f; /* Slightly darker background */
+  --secondary-bg: #29293d; /* Softer dark background */
+  --text-color: #ffffff; /* Bright text for readability */
+  --input-bg: #3a3a69; /* Input field background */
+  --button-bg: #6c63ff; /* Primary button color */
+  --button-hover-bg: #5a52e0; /* Button hover effect */
+  --popup-bg: #2e2e4a; /* Popup background */
+  --popup-text-color: #e0e0e0; /* Popup text color */
+  --input-border: #4a4a7d; /* Input border color */
+  --button-disabled-bg: #444466; /* Disabled button color */
+  --google-btn-bg: #ffffff; /* Google button background */
+  --google-btn-text: #333333; /* Google button text */
+  --error-color: #ff6b6b; /* Error text color */
+  --placeholder-color: #cccccc; /* Placeholder text */
+  --link-color: #9b59b6; /* Link color */
+  --focus-glow: rgba(108, 99, 255, 0.8); /* Focus glow effect */
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-color);
+}
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.auth-container {
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.auth-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.auth-container p {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+.auth-container a {
+  color: var(--button-bg);
+}
+.auth-container a:hover {
+  color: var(--button-hover-bg);
+}
+
+.auth-container input {
+  width: 94%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.auth-container input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: var(--button-bg);
+  box-shadow: 0 0 8px var(--focus-glow);
+}
+
+.login-btn, .normal_btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--button-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover, .normal_btn:hover {
+  background: var(--button-hover-bg);
+}
+
+.login-btn:disabled, .normal_btn:disabled {
+  background: var(--button-disabled-bg);
+  cursor: not-allowed;
+}
+
+.google-login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: var(--google-btn-bg);
+  color: var(--google-btn-text);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  gap: 10px;
+}
+
+.google-login-btn:hover {
+  background: #e8e8e8;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: var(--button-bg);
+}
+
+/* Additional Info Popup Styles */
+.additional-info-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: var(--popup-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+  text-align: center;
+}
+
+.popup-content h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--popup-text-color);
+}
+
+.popup-content input,
+.popup-content select {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text-color);
+  outline: none;
+}
+
+.popup-content input:focus,
+.popup-content select:focus {
+  border-color: var(--button-bg);
+  box-shadow: 0 0 5px var(--focus-glow);
+}
+
+.popup-content .normal_btn {
+  width: 100%;
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-content .normal_btn:hover {
+  background: var(--button-hover-bg);
+}
+
+.account-type {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.account-type button {
+  flex: 1;
+  margin: 0 0.5rem;
+  padding: 0.8rem;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.account-type button:hover {
+  background: var(--popup-bg);
+}
+
+.account-type button.active {
+  background: var(--button-bg);
+  color: var(--text-color);
+  border-color: var(--button-bg);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .popup-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .popup-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .account-type button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}

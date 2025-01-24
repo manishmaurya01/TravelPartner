@@ -1,0 +1,153 @@
+/* Root Variables for Colors */
+:root {
+  --primary-bg: #2c2e3f; /* Darker background for more contrast */
+  --secondary-bg: #3c3f58; /* Softer, contrasting background */
+  --text-color: #f0f0f0; /* Lighter text for readability */
+  --input-bg: #505673; /* Darker input field background for contrast */
+  --input-text-color: #ffffff; /* Lighter text color inside input */
+  --button-bg: #6c63ff; /* Bright button color */
+  --button-hover-bg: #5a52e0; /* Button hover effect */
+  --popup-bg: #3a3d55; /* Popup background */
+  --popup-text-color: #f5f5f5; /* Popup text color */
+  --input-border: #5a5e77; /* Input border color */
+  --button-disabled-bg: #555877; /* Disabled button color */
+  --google-btn-bg: #ffffff; /* Google button background */
+  --google-btn-text: #333333; /* Google button text */
+  --error-color: #ff4747; /* Brighter error text color */
+  --placeholder-color: #d1d1d1; /* Light placeholder text */
+  --link-color: #ff8c00; /* Brighter link color */
+  --focus-glow: rgba(108, 99, 255, 0.9); /* Focus glow effect */
+}
+
+/* General Search Container Styling */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-bg); /* Softer background */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  margin-top: -40px;
+  transition: transform 0.3s ease;
+}
+
+/* Header Text - Selected Mode */
+.selected-mode {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--link-color); /* Brighter link color */
+}
+
+/* Search Fields Styling */
+.search-fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.field-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group input,
+.field-group select {
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid var(--input-border); /* Slightly darker border */
+  background-color: var(--primary-bg); /* Darker input background */
+  color: var(--input-text-color); /* Lighter text inside input */
+  font-size: 1.1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+  outline: none;
+  border-color: var(--focus-glow); /* Brighter focus glow */
+  box-shadow: 0 0 10px var(--focus-glow); /* Bright focus glow */
+}
+
+.field-group label {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  font-size: 1.1rem;
+  color: var(--button-bg); /* Bright button color */
+  font-weight: 500;
+  background-color: var(--secondary-bg); /* Softer background for label */
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+/* Button Styling */
+.search-btn,
+.search-btn-small {
+  padding: 20px;
+  background-color: var(--button-bg); /* Bright button color */
+  color: var(--text-color);
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 50%;
+  margin-top: 20px;
+}
+
+.search-btn:hover,
+.search-btn-small:hover {
+  background-color: var(--button-hover-bg); /* Button hover color */
+}
+
+.search-btn:active,
+.search-btn-small:active {
+  transform: scale(0.98); /* Scale down when clicked */
+}
+
+.search-btn-small {
+  font-size: 1.1rem;
+  padding: 14px;
+}
+
+/* Mode Button (for selecting travel modes like Flight, Train, etc.) */
+.mode-btn {
+  background-color: var(--input-bg); /* Lighter input background */
+  border: 1px solid var(--button-bg); /* Bright button border */
+  padding: 10px;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+  color: var(--button-bg); /* Bright button text */
+  transition: background-color 0.3s ease;
+}
+
+.mode-btn.selected {
+  background-color: var(--button-bg); /* Bright button color */
+  color: var(--text-color); /* White text for selected mode */
+}
+
+.mode-btn:hover {
+  background-color: var(--button-hover-bg); /* Hover effect */
+  color: var(--text-color); /* White text on hover */
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+  .search-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .search-btn,
+  .search-btn-small {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+}

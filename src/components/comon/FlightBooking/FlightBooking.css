@@ -1,0 +1,330 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2, h3 {
+    font-weight: bold;
+  }
+  
+  .flight-booking-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Step Titles */
+  .step-1, .step-2, .step-3 {
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    color: #ff8c00;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  /* Flight Details */
+  .flight-details p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #ddd;
+  }
+  
+  .flight-details strong {
+    color: #ff8c00;
+  }
+  
+  /* Preferences Form */
+  .preferences-form {
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  .preferences-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .preferences-form select, .preferences-form input[type="text"], .preferences-form input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  .preferences-form input[type="checkbox"] {
+    width: auto;
+  }
+  
+  .preferences-form input[type="text"] {
+    background-color: #555;
+  }
+  
+  button {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #e67e00;
+  }
+  
+  .next-btn, .prev-btn, .pay-btn {
+    margin-top: 20px;
+  }
+  
+  /* Step 2 - Seat Selection */
+  .seat-selection {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .seat-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .seat-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .seat-btn.selected {
+    background-color: #cf780f;
+    color: white;
+  }
+  
+  .seat-btn.reserved {
+    background-color: #a23535;
+    cursor: not-allowed;
+  }
+  
+  .seat-selection-summary p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff8c00;
+  }
+  
+  /* Payment Section */
+  .pay-btn {
+    background-color: #1abc9c;
+  }
+  
+  .pay-btn:hover {
+    background-color: #16a085;
+  }
+  
+  /* Buttons in Dark Mode */
+  button {
+    transition: transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #f0a549;
+    transform: scale(1.05);
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media screen and (max-width: 768px) {
+    .seat-selection {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .seat-selection-summary p {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .seat-selection {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .seat-btn {
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+  
+
+  /* Container for the passenger details section */
+.passenger-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading for each passenger section */
+.passenger-form h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Styling for labels */
+.passenger-form label {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 600;
+}
+
+/* Styling for input fields and select dropdown */
+.passenger-form input[type="text"],
+.passenger-form input[type="number"],
+.passenger-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Focus state for inputs */
+.passenger-form input[type="text"]:focus,
+.passenger-form input[type="number"]:focus,
+.passenger-form select:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Styling for passenger number display */
+.passenger-form .passenger-number {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Styling for the form container to ensure inputs are aligned properly */
+.passenger-form input[type="text"],
+.passenger-form input[type="number"],
+.passenger-form select {
+  margin-bottom: 12px;
+}
+
+.passenger-form button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.passenger-form button:hover {
+  background-color: #0056b3;
+}
+
+.passenger-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* Dark mode container for the passenger details section */
+.passenger-form {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
+  
+  /* Heading for each passenger section */
+  .passenger-form h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+  }
+  
+  /* Styling for labels */
+  .passenger-form label {
+    font-size: 1em;
+    color: #ddd;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 600;
+  }
+  
+  /* Styling for input fields and select dropdown */
+  .passenger-form input[type="text"],
+  .passenger-form input[type="number"],
+  .passenger-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #444;
+    margin-bottom: 15px;
+  }
+  
+  /* Focus state for inputs */
+  .passenger-form input[type="text"]:focus,
+  .passenger-form input[type="number"]:focus,
+  .passenger-form select:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  /* Styling for passenger number display */
+  .passenger-form .passenger-number {
+    font-size: 1em;
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+  
+  /* Button styles for dark mode */
+  .passenger-form button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .passenger-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .passenger-form button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+  

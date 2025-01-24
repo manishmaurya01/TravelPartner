@@ -1,0 +1,122 @@
+/* Root Variables for Dark Mode */
+:root {
+  --primary-color: #007bff; /* Blue */
+  --secondary-color: #ff6f00; /* Orange */
+  --background-color: #121212; /* Dark background */
+  --card-background: #1e1e1e; /* Dark card background */
+  --text-color: #f9f9f9; /* Light text for dark mode */
+  --input-border: #444; /* Dark border for inputs */
+  --button-hover: #b35500; /* Dark button hover */
+}
+
+
+/* Edit Profile Container */
+.edit-profile-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: var(--card-background);  /* Apply dark background to the container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Edit Profile Header */
+.edit-profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.edit-profile-header h2 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Form */
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: var(--text-color);  /* Apply light text for labels */
+}
+
+/* Input and Textarea Fields */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 10px;
+  border: 1px solid var(--input-border);  /* Apply dark input border */
+  border-radius: 5px;
+  font-size: 14px;
+  color: var(--text-color);  /* Apply light text for inputs */
+  background-color: #333;  /* Dark background for input fields */
+}
+
+/* Profile Image Upload */
+.profile-image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-image-upload input[type="file"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Button Styles */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.save-btn {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: var(--button-hover);  /* Dark button hover */
+}
+
+.cancel-btn {
+  background-color: #444;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background-color: #666;
+}

@@ -1,0 +1,394 @@
+/* Updated CSS for Flight Page */
+:root {
+  --primary-bg: #1e1e2f;
+  --secondary-bg: #29293d;
+  --text-color: #ffffff;
+  --input-bg: #3a3a69;
+  --button-bg: #6c63ff;
+  --button-hover-bg: #5a52e0;
+  --popup-bg: #2e2e4a;
+  --popup-text-color: #e0e0e0;
+  --input-border: #4a4a7d;
+  --button-disabled-bg: #444466;
+  --error-color: #ff6b6b;
+  --placeholder-color: #cccccc;
+  --link-color: #9b59b6;
+  --focus-glow: rgba(108, 99, 255, 0.8);
+}
+
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-bg);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+}
+
+.flight-page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flight-page-header {
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: var(--text-color);
+  letter-spacing: 2px;
+}
+
+/* Flight Card */
+.flight-card {
+  display: grid;
+  grid-template-columns: 15% 25% 20% 25% 15%;
+  background: linear-gradient(145deg, var(--secondary-bg), var(--primary-bg));
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  align-items: center;
+}
+
+.flight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.company_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company_logo img {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.starting, .ending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.starting strong, .ending strong {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.starting span, .ending span {
+  font-size: 16px;
+  color: var(--placeholder-color);
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.middle span {
+  margin: 5px 0;
+}
+
+.middle span:nth-child(1) {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.middle span:nth-child(2) {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--button-bg);
+}
+
+.middle span:nth-child(3) {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--link-color);
+}
+
+.price_actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.price_actions strong {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.book_now_btn {
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book_now_btn:hover {
+  background-color: var(--button-hover-bg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.book_now_btn:active {
+  background-color: var(--button-disabled-bg);
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flight-card {
+    grid-template-columns: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .company_logo, .starting, .middle, .ending, .price_actions {
+    margin-bottom: 10px;
+  }
+
+  .company_logo img {
+    width: 50%;
+  }
+
+  .book_now_btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+.line{
+  width: 40%;
+}
+
+
+
+
+.flight-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.945); /* Darker overlay for better contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px; /* Increased padding for better spacing */
+  overflow: auto; /* Handles long content on smaller screens */
+}
+
+.flight-modal {
+  background: #1f1f1f;
+  color: #f9f9f9;
+  padding: 25px; /* Increased padding for cleaner look */
+  border-radius: 15px;
+  width: 100%;
+  max-width: 800px; /* Slightly wider for better visibility */
+  max-height: 90vh; /* Prevents modal from exceeding screen height */
+  overflow-y: auto; /* Enables scroll for long content */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+/* Close Button */
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ff4d4d;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.3);
+  color: #ff6666;
+}
+
+/* Header Section */
+h2 {
+  font-size: 2rem;
+  color: #00c4ff;
+  margin-bottom: 15px;
+}
+
+/* Time Section */
+.flight-time-container {
+  margin-bottom: 20px;
+  background: #2b2b2b;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flight-time {
+  font-size: 1.2rem;
+  color: #00c4ff;
+  font-weight: bold;
+}
+
+.flight-time span {
+  color: #f9f9f9;
+}
+
+/* Flight Details Table */
+.flight-details-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.flight-details-table th, 
+.flight-details-table td {
+  padding: 12px;
+  border-bottom: 1px solid #444;
+}
+
+.flight-details-table th {
+  background: #2b2b2b;
+  color: #00c4ff;
+}
+
+.flight-details-table td {
+  background: #333;
+  color: #f9f9f9;
+}
+
+.flight-details-table tr:hover td {
+  background: #444;
+}
+/* Class Types Section */
+.flight-details-classes {
+  margin-top: 20px;
+}
+
+.flight-details-classes h3 {
+  font-size: 1.8rem;
+  color: #00c4ff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.class-type-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.class-type-card {
+  background: linear-gradient(145deg, #2e2e2e, #3a3a3a);
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.class-type-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.class-type-icon {
+  font-size: 3rem;
+  color: #ff9f00;
+  margin-bottom: 15px;
+}
+
+.class-type-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+.class-type-price {
+  font-size: 1.2rem;
+  color: #00c4ff;
+  margin-bottom: 8px;
+}
+
+.class-type-badge {
+  background: #00c4ff;
+  color: #1f1f1f;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.class-type-baggage {
+  font-size: 1rem;
+  color: #f9f9f9;
+}
+
+/* Book Now Button */
+
+.book-now-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.book-now-btn {
+  background-color: #ff9f00;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.book-now-btn:hover {
+  background-color: #ff7518;
+  transform: scale(1.05);
+}
+
+.book-now-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 159, 0, 0.5);
+}
